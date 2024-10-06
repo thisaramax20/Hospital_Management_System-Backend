@@ -20,7 +20,7 @@ public class PatientController {
         return patientService.getAll();
     }
 
-    @PostMapping
+    @PostMapping("/add-patient")
     public void addPatient(@RequestBody Patient patient){
         patientService.addPatient(patient);
     }
