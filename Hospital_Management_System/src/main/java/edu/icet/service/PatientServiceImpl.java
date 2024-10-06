@@ -18,7 +18,8 @@ public class PatientServiceImpl implements PatientService{
     @Override
     public List<Patient> getAll() {
         List<Patient> patients = new ArrayList<>();
-        repository.findAll();
+        repository.findAll().forEach(patientEntity -> patients.add(mapper.map(patientEntity,Patient.class)));
+        return patients;
     }
 
     @Override
